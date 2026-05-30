@@ -52,7 +52,6 @@ DGX Spark packs a GB10 Grace Blackwell Superchip (SM 12.1 / sm_121) with 128 GB 
 
 ### llama.cpp
 
-- [ardge-labs/llama-cpp-dgx-spark](https://github.com/ardge-labs/llama-cpp-dgx-spark) - Platform package build repo for llama.cpp on DGX Spark.
 - [croll83/llama.cpp-dgx](https://github.com/croll83/llama.cpp-dgx) - Fork of llama.cpp optimized for DGX Spark with NVFP4, TurboQuant, and DFlash MTP.
 - [DandinPower/llama.cpp_bench](https://github.com/DandinPower/llama.cpp_bench) - Benchmarking scripts and performance reports for llama.cpp on DGX Spark.
 - [shamily/gemma4-llama-dgx-spark](https://github.com/shamily/gemma4-llama-dgx-spark) - Dockerized Gemma 4 inference with llama.cpp for GB10 (ARM64 + CUDA 13).
