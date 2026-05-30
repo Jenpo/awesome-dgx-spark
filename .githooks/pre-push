@@ -1,0 +1,14 @@
+#!/bin/sh
+# Pre-push hook: block the push if the list fails awesome-lint.
+#
+# Activate (once per clone):  git config core.hooksPath .githooks
+# awesome-lint checks structure, alphabetical order, format, and repo metadata.
+# Note: it does NOT check for dead links — run a link sweep separately.
+
+echo "pre-push: running awesome-lint…"
+if ! npx --yes awesome-lint; then
+	echo "✗ awesome-lint failed — push blocked. Fix the issues above, then push again." >&2
+	exit 1
+fi
+echo "✓ awesome-lint passed — pushing."
+exit 0
