@@ -6,12 +6,8 @@ DGX Spark is a desktop machine built on the GB10 Grace Blackwell Superchip (SM 1
 
 **Platform essentials:** `aarch64` · `CUDA 13.x` · `sm_121` · `128 GB unified memory` · `200 Gb/s NVLink-C2C`
 
-This list has two tiers. **Tested on my Spark** is what I have personally run on real GB10 hardware and judged above the bar. **Seen** is the broader landscape: Spark-specific and tracked, but not personally verified.
-
 ## Contents
 
-- [Tested on my Spark](#tested-on-my-spark)
-- [Seen — the landscape](#seen--the-landscape)
 - [Official](#official)
 - [Setup & Configuration](#setup--configuration)
 - [Inference & Serving](#inference--serving)
@@ -29,16 +25,6 @@ This list has two tiers. **Tested on my Spark** is what I have personally run on
 - [Tools & Monitoring](#tools--monitoring)
 - [Operating Systems & Containers](#operating-systems--containers)
 - [Community & Resource Collections](#community--resource-collections)
-
-## Tested on my Spark
-
-> Run on a real DGX Spark (GB10) and judged above the bar. Personally verified and opinionated.
-
-Nothing here yet. I am working through the Seen list on hardware; entries graduate here as I run them.
-
-## Seen — the landscape
-
-> Spark-specific and tracked, but not personally verified yet. The sections below are the landscape.
 
 ## Official
 

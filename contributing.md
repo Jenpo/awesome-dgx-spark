@@ -4,26 +4,21 @@ Thanks for helping make **Awesome DGX Spark** better. This list aims for one thi
 
 ## The five principles
 
-### 1. Two tiers — contribute to Seen
-
-The list has two tiers:
-
-- **Tested on my Spark** is maintainer-only: projects personally run on real GB10 hardware and judged above the bar. Entries here are opinionated and may carry a longer note.
-- **Seen — the landscape** is everything else that qualifies: Spark-specific and tracked, but not personally verified.
-
-Pull requests add to **Seen**. Entries graduate to Tested only after the maintainer has run them on hardware. This split is deliberate: it lets the list be comprehensive without pretending every entry has been vetted.
-
-### 2. Explicitly about the DGX Spark
+### 1. Explicitly about the DGX Spark
 
 The project must explicitly target the GB10 / sm_121(a) platform in its own README or code — aarch64 builds, sm_121 kernels or patches, NVFP4 on Blackwell, unified-memory handling, multi-Spark fabric — or publish results measured on a real DGX Spark. Generic CUDA or LLM tooling that merely runs on a Spark like any other GPU does not qualify. Rule of thumb: if the repository's own body never mentions DGX Spark, GB10, or sm_121, it is out.
 
-### 3. Honest, evidence-backed descriptions
+### 2. Honest, evidence-backed descriptions
 
 One line, in your own words, starting with what the thing *is* — not with an adjective. No marketing language: any quality claim ("fast", "optimized", "comprehensive") must be backed on the spot by a number, a named technique, or a concrete capability, otherwise drop it. When you cite a number, cite the one that proves the contribution, not the most impressive-looking one. The bar: the line should survive Hacker News without being called either hype or "so what does it actually do?".
 
-### 4. Proof of function, and maintained
+### 3. Proof of function
 
-Include verifiable evidence: benchmark numbers (with the software and driver versions used, so results stay interpretable as the stack moves), working commands, or a build reproducible from source. The repository must have been active within the last 12 months. Prefer source-reproducible projects; if an entry is binary-only (a wheel or image that cannot be rebuilt from source), say so in the description, and never link to entries hosted on unknown third-party mirrors.
+Include verifiable evidence: benchmark numbers (with the software and driver versions used, so results stay interpretable as the stack moves), working commands, or a build reproducible from source. Prefer source-reproducible projects; if an entry is binary-only (a wheel or image that cannot be rebuilt from source), say so in the description, and never link to entries hosted on unknown third-party mirrors.
+
+### 4. Maintained
+
+The repository must have been active within the last 12 months. Archived, read-only, or abandoned projects are declined. The platform moves fast — a project pinned to a stale CUDA, driver, or vLLM version that no longer builds is not useful to a Spark owner today.
 
 ### 5. Canonical and non-duplicate
 
@@ -37,7 +32,7 @@ Link to the canonical repository, not a redirect or mirror — if a project was 
 
 - Start the description with an uppercase letter and end it with a period.
 - Do not start with "A", "An", or "The".
-- Keep it to one line, free of marketing language (principle 3).
+- Keep it to one line, free of marketing language (principle 2).
 - Separate the link and the description with ` - ` (space-hyphen-space), not an em dash.
 
 ## Self-submissions
@@ -46,9 +41,9 @@ Self-submissions are welcome and evaluated by the same five principles as any ot
 
 ## Submitting a pull request
 
-1. Fork the repo and add your entry to the most appropriate section under **Seen**, in alphabetical order.
+1. Fork the repo and add your entry to the most appropriate section, in alphabetical order.
 2. Update the Contents table of contents if you add a new section.
-3. Open a pull request that names the project and points to the evidence behind principles 2–4 (the Spark-specific content and the proof of function).
+3. Open a pull request that names the project and points to the evidence behind principles 1, 3, and 4 (the Spark-specific content, the proof of function, and recent activity).
 4. One pull request per logical addition is preferred.
 
 By contributing, you agree that your contribution is released under [CC0 1.0](LICENSE).
