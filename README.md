@@ -182,7 +182,7 @@ You can connect two DGX Spark units directly over 200 Gb/s QSFP for double the m
 - [DanTup/dgx_dashboard](https://github.com/DanTup/dgx_dashboard) - Simple monitoring dashboard for DGX Spark.
 - [hoesing/spark-gpu-throttle-check](https://github.com/hoesing/spark-gpu-throttle-check) - Throttle test for DGX Spark that loads the GB10 with cuBLAS matmuls to detect sub-850 MHz USB-PD power-delivery throttling.
 - [jasonacox/dgx-spark](https://github.com/jasonacox/dgx-spark) - Tools for the NVIDIA DGX Spark AI personal supercomputer.
-- [joeynyc/spark-doctor](https://github.com/joeynyc/spark-doctor) - Diagnostic CLI for DGX Spark flagging the GB10 14 W power cap, unified-memory pressure, and thermal risk, and validating vLLM/Ollama/SGLang recipes.
+- [joeynyc/spark-doctor](https://github.com/joeynyc/spark-doctor) - Diagnostic CLI for DGX Spark that flags the GB10 14 W power cap, unified-memory pressure, and thermal risk, and validates vLLM/Ollama/SGLang recipes.
 - [parallelArchitect/sparkview](https://github.com/parallelArchitect/sparkview) - Terminal GPU monitor with GB10-aware unified-memory reporting, memory-pressure (PSI) and power-rail readouts, and an anomaly auto-logger.
 - [paul-aviles/NVIDIA-DGX-Spark-Dashboard](https://github.com/paul-aviles/NVIDIA-DGX-Spark-Dashboard) - Browser-based monitoring dashboard for DGX Spark nodes.
 - [thx0701/dgx-spark-status](https://github.com/thx0701/dgx-spark-status) - Real-time system monitoring dashboard built with SvelteKit and SSE.
