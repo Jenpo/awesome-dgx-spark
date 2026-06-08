@@ -35,8 +35,13 @@ DGX Spark is a desktop machine built on the GB10 Grace Blackwell Superchip (SM 1
 
 - [botAGI/AGmind](https://github.com/botAGI/AGmind) - One-command private RAG stack for DGX Spark (aarch64/GB10), with dual-Spark cluster support and 30+ containers.
 - [Chrizz-lab/GB10-Agentig-Coding-Framework](https://github.com/Chrizz-lab/GB10-Agentig-Coding-Framework) - Agentic coding stack for DGX Spark with dual-vLLM Qwen3 and CrewAI orchestration.
+- [csabakecskemeti/dgx-spark-community-playbooks](https://github.com/csabakecskemeti/dgx-spark-community-playbooks) - Community playbook collection for DGX Spark, covering dual-Spark RDMA inference, heterogeneous RoCE clustering, and local Claude Code.
 - [getainode/ainode](https://github.com/getainode/ainode) - Browser-UI AI appliance for GB10 (DGX Spark, ASUS GX10) with UDP-discovered multi-Spark tensor-parallel clustering, verified on a 4-node 487 GB cluster.
 - [GuigsEvt/dgx_spark_config](https://github.com/GuigsEvt/dgx_spark_config) - End-to-end setup for AI workloads on DGX Spark.
+- [HeKun-NVIDIA/dgx-spark-openclaw](https://github.com/HeKun-NVIDIA/dgx-spark-openclaw) - One-command deploy of a local LLM plus OpenClaw agent frontend on DGX Spark, using a GB10 NVFP4-kernel vLLM image.
+- [HendrikSchoettle/ragflow-dgx-spark](https://github.com/HendrikSchoettle/ragflow-dgx-spark) - Build and deploy pipeline for RAGFlow v0.24.0 on DGX Spark aarch64, with a source-built onnxruntime-gpu wheel for sm_121 and multilingual OCR.
+- [install-safe-press/gb10-playbooks](https://github.com/install-safe-press/gb10-playbooks) - Chinese-language hands-on playbooks for GB10 DGX Spark, spanning hardware, networking, inference engines, fine-tuning, and clustering.
+- [IryNeko/patched-flash_attn-2.8.3-for-dgx-spark](https://github.com/IryNeko/patched-flash_attn-2.8.3-for-dgx-spark) - Prebuilt flash-attn 2.8.3 wheel for DGX Spark aarch64, patched to add sm_121 onto the sm_80 kernel path.
 - [JetBrains-Hardware/spark-setup](https://github.com/JetBrains-Hardware/spark-setup) - DGX Spark setup and vLLM deployment scripts for Qwen, GPT-OSS, and Nemotron 3.
 - [jl-codes/dgx-spark-ai](https://github.com/jl-codes/dgx-spark-ai) - Curriculum for running GPT-OSS 120B on DGX Spark with unified-memory architecture lessons.
 - [mARTin-B78/dgx-spark_lite-llm_llama-swap_vllm_llama-cpp_ollama](https://github.com/mARTin-B78/dgx-spark_lite-llm_llama-swap_vllm_llama-cpp_ollama) - Multi-engine LLM stack for DGX Spark with llama-swap VRAM eviction and a LiteLLM gateway, tiered for GB10's 128 GB unified memory.
@@ -49,16 +54,19 @@ DGX Spark is a desktop machine built on the GB10 Grace Blackwell Superchip (SM 1
 ### vLLM
 
 - [AEON-7/vllm-dflash](https://github.com/AEON-7/vllm-dflash) - DGX Spark vLLM image wiring DFlash speculative decoding and NVFP4, 64 tok/s single-stream on GB10.
+- [AEON-7/vllm-ultimate-dgx-spark](https://github.com/AEON-7/vllm-ultimate-dgx-spark) - DGX Spark vLLM 0.22.1 image with Triton NVFP4 KV cache (3x capacity), DFlash, and four sm_121a patches.
 - [airawatraj/dgx-spark-nemotron-super-agent](https://github.com/airawatraj/dgx-spark-nemotron-super-agent) - Nemotron-3-Super-120B agentic stack on DGX Spark with tool-calling and spark-arena 23.7 tok/s.
 - [atcuality2021/vllm-gb10-gemma4](https://github.com/atcuality2021/vllm-gb10-gemma4) - Gemma 4 backport for DGX Spark with GB10 fixes: sm_121 NCCL build, CUTLASS FP8 disable, Ray unified-memory.
 - [Avarok-Cybersecurity/dgx-vllm](https://github.com/Avarok-Cybersecurity/dgx-vllm) - vLLM Docker image for DGX Spark.
 - [bjk110/spark_vllm_docker](https://github.com/bjk110/spark_vllm_docker) - vLLM serving for DGX Spark spanning single-box TP=1 and dual-Spark TP=2 over 200 Gb/s RoCE, with sm_121 FP8 and NVFP4 patches.
 - [eelbaz/dgx-spark-vllm-setup](https://github.com/eelbaz/dgx-spark-vllm-setup) - One-command vLLM installation for DGX Spark with Blackwell GB10 GPUs (sm_121 architecture).
+- [Entrpi/ds4-spark-vllm](https://github.com/Entrpi/ds4-spark-vllm) - 2-bit DeepSeek-V4-Flash vLLM serving on a single DGX Spark, with KV-layout fork patches raising concurrency to 229x.
 - [eugr/spark-vllm-docker](https://github.com/eugr/spark-vllm-docker) - Docker configuration for running vLLM on dual DGX Sparks with Ray/PyTorch distributed mode.
 - [gyohng/spark-vllm-compose](https://github.com/gyohng/spark-vllm-compose) - Run vLLM on DGX Spark with Docker Compose.
 - [jleighfields/vllm-dgx-spark](https://github.com/jleighfields/vllm-dgx-spark) - Tools for hosting vLLM on DGX Spark.
 - [jordanovski/overdrive](https://github.com/jordanovski/overdrive) - Async TUI, CLI, and web orchestrator for launching, monitoring, and benchmarking concurrent vLLM instances on DGX Spark via NGC containers.
 - [mark-ramsey-ri/vllm-dgx-spark](https://github.com/mark-ramsey-ri/vllm-dgx-spark) - Run vLLM on 1-to-N DGX Spark servers (single Spark, 2 via direct cable, or 3+ via switched fabric) to serve or benchmark LLMs.
+- [omnia-projetcs/spark-dgx](https://github.com/omnia-projetcs/spark-dgx) - Interactive vLLM Docker launcher for DGX Spark with per-model NVFP4/FP8 configs across a 20+ model catalog.
 - [phuongncn/asus-gx10-qwen35-speed-hack](https://github.com/phuongncn/asus-gx10-qwen35-speed-hack) - One-shell-script hybrid INT4+FP8 + MTP vLLM setup for Qwen3.5 on ASUS GX10 / DGX Spark, 35B 30 to 112 tok/s.
 - [spark-arena/sparkrun](https://github.com/spark-arena/sparkrun) - Launch, manage, and stop LLM inference workloads on DGX Spark systems.
 - [technigmaai/dgx-spark](https://github.com/technigmaai/dgx-spark) - vLLM serving recipes for Qwen3.6 (PrismaQuant and NVFP4) on DGX Spark, with chat-template fixes and benchmark notes.
@@ -86,8 +94,11 @@ DGX Spark is a desktop machine built on the GB10 Grace Blackwell Superchip (SM 1
 - [calico88x/DGX-Model-Manager](https://github.com/calico88x/DGX-Model-Manager) - Single-file web UI for managing Ollama, SGLang, vLLM, llama.cpp, LocalAI, and ComfyUI on DGX Spark.
 - [dataforgex/dgx_spark](https://github.com/dataforgex/dgx_spark) - Multi-model LLM serving with vLLM, web UI, and tool calling.
 - [jdaln/dgx-spark-inference-stack](https://github.com/jdaln/dgx-spark-inference-stack) - Docker serving stack for a single DGX Spark with on-demand model loading, automatic idle shutdown, and a unified API gateway.
+- [kshetrajna12/sparkstation](https://github.com/kshetrajna12/sparkstation) - LLM gateway for DGX Spark fronting vLLM, SGLang, and TRT-LLM under one OpenAI-compatible API, with auto-suspend and thermal protection.
+- [mark-ramsey-ri/trt-dgx-spark](https://github.com/mark-ramsey-ri/trt-dgx-spark) - TensorRT-LLM serving on 1-to-N DGX Spark with an arm64 nvcr 1.2.1 container and tensor-parallel auto-scaling to cluster size.
 - [MerkyorLynn/lynn-engine](https://github.com/MerkyorLynn/lynn-engine) - NVFP4 inference engine for DGX Spark sm_121 and RTX PRO 6000 with self-written CUDA/Triton kernels.
 - [rdoiron/mimo-mods-for-dgx-spark](https://github.com/rdoiron/mimo-mods-for-dgx-spark) - Ten vLLM runtime patches for MiMo-V2.5 on sm_121a, with a CUTLASS block-FP8 bypass and a backported tool-call corruption fix (PR #42969).
+- [Th0rgal/dgx-spark-router](https://github.com/Th0rgal/dgx-spark-router) - Zero-dependency OpenAI-compatible router for DGX Spark that swaps llama.cpp and vLLM NVFP4 backends in-place to fit 128 GB unified memory.
 - [wshobson/minimax-dgx-spark](https://github.com/wshobson/minimax-dgx-spark) - MiniMax M2 inference server for DGX Spark.
 
 ## Fine-tuning
@@ -115,6 +126,9 @@ GB10's Blackwell architecture supports NVFP4 (4-bit floating point) in hardware.
 - [Logos-Flux/optimized-CUDA-GB10](https://github.com/Logos-Flux/optimized-CUDA-GB10) - CUDA kernels (RMSNorm, GELU) for GB10 sm_121, the first sm_121 kernels on the Hugging Face Kernel Hub.
 - [mitkox/sparser-faster-llms](https://github.com/mitkox/sparser-faster-llms) - GB10 sm_121 CUDA-core TwELL sparse-kernel port of SakanaAI's sparser-faster-llms for DGX Spark builds without Hopper WGMMA.
 - [Plaaasma/FlashQLA-Blackwell](https://github.com/Plaaasma/FlashQLA-Blackwell) - Qwen's FlashQLA TileLang Gated Delta Net kernels ported to GB10 (sm_121), dropping into vLLM as a faster prefill kernel for Qwen3.6 linear-attention models.
+- [r0b0tlab/gemma4-26b-a4b-nvfp4-gb10-native-cutlass](https://github.com/r0b0tlab/gemma4-26b-a4b-nvfp4-gb10-native-cutlass) - Gemma-4-26B-A4B NVFP4 for GB10 via native VLLM_CUTLASS MoE backend on CUDA-13 nightly, 260 tok/s at concurrency 8.
+- [r0b0tlab/gemma4-31b-it-nvfp4-gb10](https://github.com/r0b0tlab/gemma4-31b-it-nvfp4-gb10) - Gemma-4-31B-IT NVFP4 reproducibility pack for GB10 with native FlashInfer/CUTLASS FP4 GEMM, 54 tok/s at concurrency 8.
+- [r0b0tlab/nemotron3-super-120b-a12b-nvfp4-gb10-native-mtp](https://github.com/r0b0tlab/nemotron3-super-120b-a12b-nvfp4-gb10-native-mtp) - Nemotron-3-Super-120B-A12B NVFP4 for GB10 on SGLang native MTP, 21.64 tok/s and +45.8% over baseline.
 - [r0b0tlab/qwen36-27b-nvfp4-gb10-native-mtp](https://github.com/r0b0tlab/qwen36-27b-nvfp4-gb10-native-mtp) - Qwen3.6-27B-Text NVFP4 reproducibility pack for GB10 (sm_121) with vLLM native MTP, 93 tok/s at concurrency 4.
 - [r0b0tlab/qwen36-35b-a3b-nvfp4-gb10-native-mtp](https://github.com/r0b0tlab/qwen36-35b-a3b-nvfp4-gb10-native-mtp) - Qwen3.6-35B-A3B NVFP4 for GB10 (sm_121) on SGLang native MTP with a GDN-attention loader patch, 174 tok/s at concurrency 4.
 
@@ -155,12 +169,15 @@ You can connect two DGX Spark units directly over 200 Gb/s QSFP for double the m
 - [makiisthenes/dgx-spark-multinode-vllm-ray](https://github.com/makiisthenes/dgx-spark-multinode-vllm-ray) - Dual-DGX Spark vLLM deployment with NVIDIA vLLM 26.04, Ray, and 200 GbE QSFP.
 - [pfn/spark-vllm-compose](https://github.com/pfn/spark-vllm-compose) - Multi-node Docker Compose configuration for vLLM on DGX Spark.
 - [RustRunner/DGX-Llama-Cluster](https://github.com/RustRunner/DGX-Llama-Cluster) - Three-node llama.cpp cluster for DGX Spark over ConnectX-7 RDMA, 384 GB pooled unified memory.
+- [tomsti/guides](https://github.com/tomsti/guides) - GB10 cluster guide for DGX Spark over ConnectX-7 RoCE, covering NCCL rail pinning, the duplicate-MAC workaround, and MikroTik 400G switching.
 - [vroomfondel/dgxarley](https://github.com/vroomfondel/dgxarley) - Ansible playbooks for a K3s cluster of four DGX Spark nodes and an x86 control plane, running distributed SGLang inference.
 - [ZD-AI-Lab/Triple-GB10](https://github.com/ZD-AI-Lab/Triple-GB10) - Three-node GB10 RoCE ring (QSFP, no switch) for Ray + vLLM pipeline-parallel across 3 Sparks.
 
 ## Image & Media Generation
 
 - [AEON-7/comfyui-aeon-spark](https://github.com/AEON-7/comfyui-aeon-spark) - ComfyUI Docker for DGX Spark with SageAttention v3 compiled for sm_121a, CUDA 13, NVFP4, and Flux 2 / LTX 2.3 pre-bundled.
+- [CoconutMacaroon/blender-arm64](https://github.com/CoconutMacaroon/blender-arm64) - Blender build for GB10 aarch64 with CUDA, OptiX, and Vulkan, shipping a prebuilt DGX Spark binary release.
+- [dr-vij/Hunyuan3D-2.1-DGX-Spark-Docker](https://github.com/dr-vij/Hunyuan3D-2.1-DGX-Spark-Docker) - Hunyuan3D-2.1 3D generation on DGX Spark via Docker Compose, building custom_rasterizer and DifferentiableRenderer CUDA components on-box.
 - [dr-vij/Trellis2-DGX-Spark-Docker](https://github.com/dr-vij/Trellis2-DGX-Spark-Docker) - Trellis2 3D generation on DGX Spark.
 - [ecarmen16/SparkyUI](https://github.com/ecarmen16/SparkyUI) - ComfyUI + SageAttention for DGX Spark (ARM64, sm_121).
 - [luix93/DGX-Spark-ComfyUI](https://github.com/luix93/DGX-Spark-ComfyUI) - Setup for running ComfyUI on DGX Spark.
@@ -168,11 +185,13 @@ You can connect two DGX Spark units directly over 200 Gb/s QSFP for double the m
 - [mvalancy/blender-nvidia-gb10](https://github.com/mvalancy/blender-nvidia-gb10) - Blender 5.0.1 source build for GB10 aarch64 with Cycles CUDA-13 GPU rendering, via 8 sm_121/CUDA-13 patches.
 - [phaserblast/ComfyUI-DGXSparkSafetensorsLoader](https://github.com/phaserblast/ComfyUI-DGXSparkSafetensorsLoader) - Zero-copy model loader for ComfyUI on DGX Spark using the fastsafetensors library.
 - [raibid-entertainment/dgx-pixels](https://github.com/raibid-entertainment/dgx-pixels) - Stable Diffusion + LoRA pipeline for pixel art generation on DGX Spark.
+- [Triplany/comfyui-dgx-spark](https://github.com/Triplany/comfyui-dgx-spark) - Updater kit for an existing ComfyUI install on DGX Spark, adding sm_121 SageAttention and an aarch64 cu13 ONNX Runtime wheel.
 
 ## Audio & Speech
 
 - [AEON-7/qwen3-asr-server](https://github.com/AEON-7/qwen3-asr-server) - OpenAI /v1/audio/transcriptions server for Qwen3-ASR-0.6B, vLLM-native with sm_120 flash-attn 2, hot-path RTF 16x.
 - [AEON-7/qwen3-tts-server](https://github.com/AEON-7/qwen3-tts-server) - OpenAI /v1/audio/speech server for Qwen3-TTS-1.7B-VoiceDesign with sm_120 flash-attn 2, hot-path RTF 1.30x and free-form voice conditioning.
+- [kedarpotdar-nv/spark-realtime-chatbot](https://github.com/kedarpotdar-nv/spark-realtime-chatbot) - On-device voice and vision assistant for DGX Spark, ~320 ms voice latency on one GB10 with Qwen3-VL and faster-whisper.
 - [Logos-Flux/spark-voice-pipeline](https://github.com/Logos-Flux/spark-voice-pipeline) - Real-time voice assistant on DGX Spark achieving ~766 ms latency to first audio.
 - [mARTin-B78/dgx-spark-faster-qwen3-tts](https://github.com/mARTin-B78/dgx-spark-faster-qwen3-tts) - Faster-Qwen3-TTS on DGX Spark (GB10) as an OpenAI-compatible TTS API with CUDA-graph acceleration and four voice backends.
 - [Mekopa/whisperx-blackwell](https://github.com/Mekopa/whisperx-blackwell) - GPU-accelerated WhisperX on Blackwell (sm_121) for DGX Spark.
@@ -203,6 +222,7 @@ Beyond LLMs, GB10's unified memory and aarch64 stack run scientific compute: pro
 - [jasonacox/dgx-spark](https://github.com/jasonacox/dgx-spark) - Tools for the NVIDIA DGX Spark AI personal supercomputer.
 - [joeynyc/spark-doctor](https://github.com/joeynyc/spark-doctor) - Diagnostic CLI for DGX Spark that flags the GB10 14 W power cap, unified-memory pressure, and thermal risk, and validates vLLM/Ollama/SGLang recipes.
 - [lynx-lee/lynx-ollama](https://github.com/lynx-lee/lynx-ollama) - Ollama manager for DGX Spark with GB10 unified-memory detection and auto-tuned concurrency.
+- [mchenetz/sparkd](https://github.com/mchenetz/sparkd) - Localhost dashboard for a DGX Spark fleet, with HF browsing, Claude-generated vLLM recipes, and single-box or Ray-cluster launch.
 - [parallelArchitect/sparkview](https://github.com/parallelArchitect/sparkview) - Terminal GPU monitor with GB10-aware unified-memory reporting, memory-pressure (PSI) and power-rail readouts, and an anomaly auto-logger.
 - [paul-aviles/NVIDIA-DGX-Spark-Dashboard](https://github.com/paul-aviles/NVIDIA-DGX-Spark-Dashboard) - Browser-based monitoring dashboard for DGX Spark nodes.
 - [thx0701/dgx-spark-status](https://github.com/thx0701/dgx-spark-status) - Real-time system monitoring dashboard built with SvelteKit and SSE.
