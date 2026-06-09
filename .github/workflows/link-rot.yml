@@ -1,0 +1,40 @@
+name: link-rot
+
+on:
+  schedule:
+    - cron: '0 0 * * 6'   # Saturday 00:00 UTC (Sat 09:00 KST)
+  workflow_dispatch: {}
+
+permissions:
+  contents: read
+  issues: write
+
+jobs:
+  check:
+    runs-on: ubuntu-latest
+    steps:
+      - uses: actions/checkout@v4
+
+      - name: Check entry links
+        id: check
+        env:
+          GH_TOKEN: ${{ github.token }}
+        run: |
+          if bash .github/scripts/link-check.sh README.md; then
+            echo "dead=0" >> "$GITHUB_OUTPUT"
+          else
+            echo "dead=1" >> "$GITHUB_OUTPUT"
+          fi
+
+      - name: Report dead links to an issue
+        if: steps.check.outputs.dead == '1'
+        env:
+          GH_TOKEN: ${{ github.token }}
+        run: |
+          gh label create link-rot --color B60205 --description "Dead or rotten entry link" --force
+          existing=$(gh issue list --label link-rot --state open --json number --jq '.[0].number // empty')
+          if [ -n "$existing" ]; then
+            gh issue comment "$existing" --body-file report.md
+          else
+            gh issue create --title "Link rot detected" --label link-rot --body-file report.md
+          fi
