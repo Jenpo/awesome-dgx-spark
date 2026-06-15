@@ -96,7 +96,6 @@ DGX Spark is a desktop machine built on the GB10 Grace Blackwell Superchip (SM 1
 - [jdaln/dgx-spark-inference-stack](https://github.com/jdaln/dgx-spark-inference-stack) - Docker serving stack for a single DGX Spark with on-demand model loading, automatic idle shutdown, and a unified API gateway.
 - [kshetrajna12/sparkstation](https://github.com/kshetrajna12/sparkstation) - LLM gateway for DGX Spark fronting vLLM, SGLang, and TRT-LLM under one OpenAI-compatible API, with auto-suspend and thermal protection.
 - [mark-ramsey-ri/trt-dgx-spark](https://github.com/mark-ramsey-ri/trt-dgx-spark) - TensorRT-LLM serving on 1-to-N DGX Spark with an arm64 nvcr 1.2.1 container and tensor-parallel auto-scaling to cluster size.
-- [MerkyorLynn/lynn-engine](https://github.com/MerkyorLynn/lynn-engine) - NVFP4 inference engine for DGX Spark sm_121 and RTX PRO 6000 with self-written CUDA/Triton kernels.
 - [rdoiron/mimo-mods-for-dgx-spark](https://github.com/rdoiron/mimo-mods-for-dgx-spark) - Ten vLLM runtime patches for MiMo-V2.5 on sm_121a, with a CUTLASS block-FP8 bypass and a backported tool-call corruption fix (PR #42969).
 - [Th0rgal/dgx-spark-router](https://github.com/Th0rgal/dgx-spark-router) - Zero-dependency OpenAI-compatible router for DGX Spark that swaps llama.cpp and vLLM NVFP4 backends in-place to fit 128 GB unified memory.
 - [wshobson/minimax-dgx-spark](https://github.com/wshobson/minimax-dgx-spark) - MiniMax M2 inference server for DGX Spark.
