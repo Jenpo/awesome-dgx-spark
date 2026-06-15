@@ -139,6 +139,7 @@ GB10's Blackwell architecture supports NVFP4 (4-bit floating point) in hardware.
 - [bigs/deepseek-v4-flash-dgx-spark](https://github.com/bigs/deepseek-v4-flash-dgx-spark) - Runtime experiments and serving harness for DeepSeek-V4-Flash on a single DGX Spark.
 - [casualcomputer/rtx_pro_6000_vs_dgx_spark](https://github.com/casualcomputer/rtx_pro_6000_vs_dgx_spark) - DGX Spark vs RTX PRO 6000 inference benchmark with memory-bandwidth analysis across batch sizes.
 - [DanTup/spark-evals](https://github.com/DanTup/spark-evals) - Accuracy evals (BFCL, BigCodeBench, IFEvalCode) for models and quantizations that fit on a single DGX Spark, as a leaderboard.
+- [elsung/dgx-spark-deepseek-v4-flash](https://github.com/elsung/dgx-spark-deepseek-v4-flash) - Cross-machine DeepSeek-V4-Flash benchmark for dual DGX Spark, with a 10-model GGUF suite and 500K long-context decay curves.
 - [Entrpi/ds4-on-spark](https://github.com/Entrpi/ds4-on-spark) - Single-Spark deployment of antirez's ds4 (DeepSeek-V4-Flash) with measured benchmarks and a memory-bandwidth roofline analysis, documenting a CUDA MTP-parity gap.
 - [jeremy-newhouse/dgx-spark-nemotron-super-bench](https://github.com/jeremy-newhouse/dgx-spark-nemotron-super-bench) - Single-stream decode benchmark of Nemotron-3-Super-120B-A12B-NVFP4 on one GB10, ~26-27 tok/s realistic with MTP vs ~33.6 microbench.
 - [Kleybrink/dgx-spark-bench](https://github.com/Kleybrink/dgx-spark-bench) - Benchmarking framework measuring throughput, latency, VRAM, and accuracy with LLM-as-a-Judge.
@@ -150,7 +151,9 @@ GB10's Blackwell architecture supports NVFP4 (4-bit floating point) in hardware.
 - [nabe2030/dense-27b-31b-dgx-spark](https://github.com/nabe2030/dense-27b-31b-dgx-spark) - Benchmark of Qwen 3.5/3.6-27B and Gemma 4-31B on DGX Spark.
 - [nabe2030/gemma4-vs-qwen35-dgx-spark](https://github.com/nabe2030/gemma4-vs-qwen35-dgx-spark) - Gemma 4 vs Qwen 3.5 MoE benchmark with llama.cpp.
 - [r0b0tlab/deepseek-v4-flash-nvfp4-gb10-benchmark](https://github.com/r0b0tlab/deepseek-v4-flash-nvfp4-gb10-benchmark) - DeepSeek-V4-Flash FP8 benchmark on dual DGX Spark (sm_121a, TP=2, RoCE, MTP), 7.5x to 38 tok/s from build-commit pinning.
+- [r0b0tlab/diffusiongemma-26b-nvfp4-sm121-vllm](https://github.com/r0b0tlab/diffusiongemma-26b-nvfp4-sm121-vllm) - vLLM container and benchmark for DiffusionGemma 26B-A4B NVFP4 on GB10 via native CUTLASS FP4 MoE.
 - [r0b0tlab/minimax-m27-nvfp4-gb10-benchmark](https://github.com/r0b0tlab/minimax-m27-nvfp4-gb10-benchmark) - MiniMax-M2.7 NVFP4 benchmark on dual GB10 (sm_121) via vLLM FlashInfer-CUTLASS, 25.06 tok/s tg128 with an arm64 image.
+- [r0b0tlab/nex-n2-mini-nvfp4](https://github.com/r0b0tlab/nex-n2-mini-nvfp4) - NVFP4 vLLM container for Nex-N2-mini (Qwen3.5-MoE-35B) on GB10, 185 tok/s aggregate at concurrency 8.
 - [rossingram/Spark-DGX-Benchmark](https://github.com/rossingram/Spark-DGX-Benchmark) - Benchmark script testing compute, memory bandwidth, diffusion, and LLM throughput on DGX Spark.
 - [wengzhiwen/DeepSeek-OCR-DGX-Spark](https://github.com/wengzhiwen/DeepSeek-OCR-DGX-Spark) - DeepSeek OCR on DGX Spark (ARM64 + CUDA 13.0).
 - [yunusshin/DGX_Spark_Qwen3.5-35B-A3B-Optimized](https://github.com/yunusshin/DGX_Spark_Qwen3.5-35B-A3B-Optimized) - Qwen3.5-35B-A3B optimizations for DGX Spark: INT8 lm_head and MTP-2, 64 to 113 tok/s.
@@ -179,6 +182,8 @@ You can connect two DGX Spark units directly over 200 Gb/s QSFP for double the m
 - [dr-vij/Hunyuan3D-2.1-DGX-Spark-Docker](https://github.com/dr-vij/Hunyuan3D-2.1-DGX-Spark-Docker) - Hunyuan3D-2.1 3D generation on DGX Spark via Docker Compose, building custom_rasterizer and DifferentiableRenderer CUDA components on-box.
 - [dr-vij/Trellis2-DGX-Spark-Docker](https://github.com/dr-vij/Trellis2-DGX-Spark-Docker) - Trellis2 3D generation on DGX Spark.
 - [ecarmen16/SparkyUI](https://github.com/ecarmen16/SparkyUI) - ComfyUI + SageAttention for DGX Spark (ARM64, sm_121).
+- [joeynyc/cosmos-locateanything-dgx](https://github.com/joeynyc/cosmos-locateanything-dgx) - Two-stage DGX Spark pipeline: Cosmos 3 video generation, then NVIDIA LocateAnything object grounding.
+- [kabilankb/cosmos3-nano-gb10](https://github.com/kabilankb/cosmos3-nano-gb10) - Cosmos3-Nano (16B) video and image generation on GB10 with auto-applied ARM Blackwell patches.
 - [luix93/DGX-Spark-ComfyUI](https://github.com/luix93/DGX-Spark-ComfyUI) - Setup for running ComfyUI on DGX Spark.
 - [mmartial/ComfyUI-Nvidia-Docker](https://github.com/mmartial/ComfyUI-Nvidia-Docker) - Multi-platform ComfyUI Docker (x86_64, Blackwell, DGX Spark) with notes for compiling SageAttention on sm_121a.
 - [mvalancy/blender-nvidia-gb10](https://github.com/mvalancy/blender-nvidia-gb10) - Blender 5.0.1 source build for GB10 aarch64 with Cycles CUDA-13 GPU rendering, via 8 sm_121/CUDA-13 patches.
