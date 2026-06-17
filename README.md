@@ -172,6 +172,7 @@ You can connect two DGX Spark units directly over 200 Gb/s QSFP for double the m
 - [pfn/spark-vllm-compose](https://github.com/pfn/spark-vllm-compose) - Multi-node Docker Compose configuration for vLLM on DGX Spark.
 - [RustRunner/DGX-Llama-Cluster](https://github.com/RustRunner/DGX-Llama-Cluster) - Three-node llama.cpp cluster for DGX Spark over ConnectX-7 RDMA, 384 GB pooled unified memory.
 - [tomsti/guides](https://github.com/tomsti/guides) - GB10 cluster guide for DGX Spark over ConnectX-7 RoCE, covering NCCL rail pinning, the duplicate-MAC workaround, and MikroTik 400G switching.
+- [tonyd2wild/Minimax-M3-NVFP-3x-DGX-Sparks-TP-3](https://github.com/tonyd2wild/Minimax-M3-NVFP-3x-DGX-Sparks-TP-3) - MiniMax-M3 NVFP4 (428B-A23B) served at tensor-parallel 3 across three DGX Sparks, with head-padding and RoCE fixes.
 - [vroomfondel/dgxarley](https://github.com/vroomfondel/dgxarley) - Ansible playbooks for a K3s cluster of four DGX Spark nodes and an x86 control plane, running distributed SGLang inference.
 - [ZD-AI-Lab/Triple-GB10](https://github.com/ZD-AI-Lab/Triple-GB10) - Three-node GB10 RoCE ring (QSFP, no switch) for Ray + vLLM pipeline-parallel across 3 Sparks.
 
@@ -222,6 +223,7 @@ Beyond LLMs, GB10's unified memory and aarch64 stack run scientific compute: pro
 - [chappa-ai-llc/spark-smi](https://github.com/chappa-ai-llc/spark-smi) - System-monitor TUI for DGX Spark with unified-memory and Grace P/E-core awareness, MT2910 200 Gb/s NIC bandwidth, and mixed sm_121 + sm_86 GPU support.
 - [chronosolidus/dgxsparkmonitor](https://github.com/chronosolidus/dgxsparkmonitor) - Cyberpunk-themed real-time monitoring dashboard for DGX Spark over SSH.
 - [DanTup/dgx_dashboard](https://github.com/DanTup/dgx_dashboard) - Simple monitoring dashboard for DGX Spark.
+- [engineering87/sparkfit](https://github.com/engineering87/sparkfit) - Memory capacity planner for DGX Spark: 128 GB unified-memory split, roofline tok/s estimate, and quantization advisor.
 - [hoesing/spark-gpu-throttle-check](https://github.com/hoesing/spark-gpu-throttle-check) - Throttle test for DGX Spark that loads the GB10 with cuBLAS matmuls to detect sub-850 MHz USB-PD power-delivery throttling.
 - [jasonacox/dgx-spark](https://github.com/jasonacox/dgx-spark) - Tools for the NVIDIA DGX Spark AI personal supercomputer.
 - [joeynyc/spark-doctor](https://github.com/joeynyc/spark-doctor) - Diagnostic CLI for DGX Spark that flags the GB10 14 W power cap, unified-memory pressure, and thermal risk, and validates vLLM/Ollama/SGLang recipes.
