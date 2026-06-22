@@ -112,7 +112,6 @@ DGX Spark is a desktop machine built on the GB10 Grace Blackwell Superchip (SM 1
 - [alicankiraz1/DGX-Spark-Asus-Ascent-Nvidia-GB10-SFT-Finetuner](https://github.com/alicankiraz1/DGX-Spark-Asus-Ascent-Nvidia-GB10-SFT-Finetuner) - No-code SFT fine-tuning tool for DGX Spark.
 - [haven-jeon/unsloth-vllm-gb10](https://github.com/haven-jeon/unsloth-vllm-gb10) - Unsloth training and vLLM inference Docker image for DGX Spark GB10 with source-built xformers and Triton.
 - [kreuzhofer/dgx-spark-unsloth-qwen3.5-training](https://github.com/kreuzhofer/dgx-spark-unsloth-qwen3.5-training) - BF16 LoRA fine-tuning of Qwen3.5-35B-A3B on a single DGX Spark with unsloth.
-- [MoHussein197/dgx-spark-finetune-llm](https://github.com/MoHussein197/dgx-spark-finetune-llm) - Fine-tune LLMs with LoRA adapters and quantization on DGX Spark.
 - [NvMayMay/nvfp4-lora-spark](https://github.com/NvMayMay/nvfp4-lora-spark) - NVFP4-aware LoRA training and serving for Nemotron-3 MoE on one GB10, Super-120B at 93 GB peak with loss 1.00 vs BF16 0.98.
 - [riomus/dgx-spark-unsloth](https://github.com/riomus/dgx-spark-unsloth) - Unsloth usage on DGX Spark using UV and NVIDIA's Docker image.
 - [waybarrios/dgx-spark-finetune-llm](https://github.com/waybarrios/dgx-spark-finetune-llm) - LLM fine-tuning with LoRA + NVFP4/MXFP8 on DGX Spark.
