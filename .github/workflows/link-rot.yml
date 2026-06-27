@@ -38,3 +38,13 @@ jobs:
           else
             gh issue create --title "Link rot detected" --label link-rot --body-file report.md
           fi
+
+      - name: Close the link-rot issue once the check is clean
+        if: steps.check.outputs.dead == '0'
+        env:
+          GH_TOKEN: ${{ github.token }}
+        run: |
+          existing=$(gh issue list --label link-rot --state open --json number --jq '.[0].number // empty')
+          if [ -n "$existing" ]; then
+            gh issue close "$existing" --comment "All entry links resolve again (0 dead). Closing automatically; a future rot will open a fresh report."
+          fi
