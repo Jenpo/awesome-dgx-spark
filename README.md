@@ -48,6 +48,7 @@ DGX Spark is a desktop machine built on the GB10 Grace Blackwell Superchip (SM 1
 - [IryNeko/patched-flash_attn-2.8.3-for-dgx-spark](https://github.com/IryNeko/patched-flash_attn-2.8.3-for-dgx-spark) - Prebuilt flash-attn 2.8.3 wheel for DGX Spark aarch64, patched to add sm_121 onto the sm_80 kernel path.
 - [JetBrains-Hardware/spark-setup](https://github.com/JetBrains-Hardware/spark-setup) - DGX Spark setup and vLLM deployment scripts for Qwen, GPT-OSS, and Nemotron 3.
 - [jl-codes/dgx-spark-ai](https://github.com/jl-codes/dgx-spark-ai) - Curriculum for running GPT-OSS 120B on DGX Spark with unified-memory architecture lessons.
+- [m9h/neurocontainers-arm](https://github.com/m9h/neurocontainers-arm) - Prebuilt causal-conv1d and mamba-ssm aarch64 wheels plus arm64 neuroimaging containers built against NGC PyTorch CUDA 13, with the NeuroSTORM Mamba stack verified on DGX Spark.
 - [mARTin-B78/dgx-spark_lite-llm_llama-swap_vllm_llama-cpp_ollama](https://github.com/mARTin-B78/dgx-spark_lite-llm_llama-swap_vllm_llama-cpp_ollama) - Multi-engine LLM stack for DGX Spark with llama-swap VRAM eviction and a LiteLLM gateway, tiered for GB10's 128 GB unified memory.
 - [natolambert/dgx-spark-setup](https://github.com/natolambert/dgx-spark-setup) - Setup guide focused on ML training (GB10 Blackwell, CUDA 13, aarch64).
 - [raphaelamorim/spark-playbooks](https://github.com/raphaelamorim/spark-playbooks) - Community playbooks and recipes for deploying AI models and workloads on DGX Spark.
@@ -66,6 +67,7 @@ DGX Spark is a desktop machine built on the GB10 Grace Blackwell Superchip (SM 1
 - [atcuality2021/vllm-gb10-gemma4](https://github.com/atcuality2021/vllm-gb10-gemma4) - Gemma 4 backport for DGX Spark with GB10 fixes: sm_121 NCCL build, CUTLASS FP8 disable, Ray unified-memory.
 - [Avarok-Cybersecurity/dgx-vllm](https://github.com/Avarok-Cybersecurity/dgx-vllm) - vLLM Docker image for DGX Spark.
 - [bjk110/spark_vllm_docker](https://github.com/bjk110/spark_vllm_docker) - vLLM serving for DGX Spark spanning single-box TP=1 and dual-Spark TP=2 over 200 Gb/s RoCE, with sm_121 FP8 and NVFP4 patches.
+- [drowzeys/Keys-Concurrency-Patch-for-DSpark-DeepSeek-V4-Flash](https://github.com/drowzeys/Keys-Concurrency-Patch-for-DSpark-DeepSeek-V4-Flash) - vLLM patch unlocking continuous-batch concurrency for DSpark speculative decoding (stock serializes at max-num-seqs 1), with byte-identical single-stream output and 122 tok/s at concurrency 4 on dual DGX Spark TP=2.
 - [eelbaz/dgx-spark-vllm-setup](https://github.com/eelbaz/dgx-spark-vllm-setup) - One-command vLLM installation for DGX Spark with Blackwell GB10 GPUs (sm_121 architecture).
 - [EmilHaase/DGX-Spark-VLLM-Hydra-Manager](https://github.com/EmilHaase/DGX-Spark-VLLM-Hydra-Manager) - vLLM manager for DGX Spark with sm_121a source builds and UMA KV-cache limits for multi-model launch.
 - [Entrpi/ds4-spark-vllm](https://github.com/Entrpi/ds4-spark-vllm) - 2-bit DeepSeek-V4-Flash vLLM serving on a single DGX Spark, with KV-layout fork patches raising concurrency to 229x.
@@ -131,6 +133,7 @@ GB10's Blackwell architecture supports NVFP4 (4-bit floating point) in hardware.
 - [AEON-7/Gemma-4-26B-A4B-it-Uncensored-NVFP4](https://github.com/AEON-7/Gemma-4-26B-A4B-it-Uncensored-NVFP4) - NVFP4 Gemma 4 26B MoE on DGX Spark with DFlash speculative decoding, 39-155 tok/s single-stream.
 - [AEON-7/Gemma-4-31B-Uncensored-NVFP4-DFlash](https://github.com/AEON-7/Gemma-4-31B-Uncensored-NVFP4-DFlash) - vLLM image for DGX Spark serving NVFP4 Gemma 4 31B (Deckard Heretic) with z-lab DFlash speculative decoding.
 - [AEON-7/Nemotron-3-Nano-Omni-AEON-Ultimate-Uncensored](https://github.com/AEON-7/Nemotron-3-Nano-Omni-AEON-Ultimate-Uncensored) - Source-built vLLM image for DGX Spark serving abliterated Nemotron-3-Nano-Omni multimodal in BF16 and NVFP4.
+- [AEON-7/Ornith-1.0-35B-AEON-Ultimate-Uncensored](https://github.com/AEON-7/Ornith-1.0-35B-AEON-Ultimate-Uncensored) - Abliterated Ornith-1.0-35B (DeepReinforce agentic-coding MoE) in BF16 and NVFP4, 93 vs 30 tok/s decode on DGX Spark with DFlash, at 0/80 refusals and unchanged 0.833 agentic pass@1.
 - [AEON-7/Qwen3.6-27B-AEON-Ultimate-Uncensored-DFlash](https://github.com/AEON-7/Qwen3.6-27B-AEON-Ultimate-Uncensored-DFlash) - Prebuilt vLLM container for DGX Spark with abliterated Qwen3.6-27B (NVFP4 + DFlash), sm_121a-patched for 37.6 tok/s vs 10.5 raw.
 - [AEON-7/Qwen3.6-NVFP4-DFlash](https://github.com/AEON-7/Qwen3.6-NVFP4-DFlash) - Source-built vLLM image with 7 sm_121a patches serving NVFP4 Qwen3.6-35B-A3B at 84 tok/s with DFlash speculative decoding.
 - [AEON-7/supergemma4-26b-abliterated-multimodal-nvfp4](https://github.com/AEON-7/supergemma4-26b-abliterated-multimodal-nvfp4) - NVFP4 (AWQ) SuperGemma4-26B abliterated multimodal for DGX Spark, as a prebuilt vLLM container.
@@ -143,7 +146,7 @@ GB10's Blackwell architecture supports NVFP4 (4-bit floating point) in hardware.
 - [r0b0tlab/gemma4-31b-it-nvfp4-gb10](https://github.com/r0b0tlab/gemma4-31b-it-nvfp4-gb10) - Gemma-4-31B-IT NVFP4 reproducibility pack for GB10 with native FlashInfer/CUTLASS FP4 GEMM, 54 tok/s at concurrency 8.
 - [r0b0tlab/nemotron3-super-120b-a12b-nvfp4-gb10-native-mtp](https://github.com/r0b0tlab/nemotron3-super-120b-a12b-nvfp4-gb10-native-mtp) - Nemotron-3-Super-120B-A12B NVFP4 for GB10 on SGLang native MTP, 21.64 tok/s and +45.8% over baseline.
 - [r0b0tlab/nvidia-qwen-3.6-27B-sm121-nvfp4](https://github.com/r0b0tlab/nvidia-qwen-3.6-27B-sm121-nvfp4) - Qwen3.6-27B NVFP4 serving pack for GB10 (sm_121) with vLLM native MTP and FP8 KV cache, 144 tok/s at concurrency 16 and 81.88% full-set GSM8K.
-- [r0b0tlab/qwen36-35b-a3b-nvfp4-gb10-native-mtp](https://github.com/r0b0tlab/qwen36-35b-a3b-nvfp4-gb10-native-mtp) - Qwen3.6-35B-A3B NVFP4 for GB10 (sm_121) on SGLang native MTP with a GDN-attention loader patch, 174 tok/s at concurrency 4.
+- [r0b0tlab/qwen36-35b-a3b-nvfp4-fast-sm121-vllm](https://github.com/r0b0tlab/qwen36-35b-a3b-nvfp4-fast-sm121-vllm) - Qwen3.6-35B-A3B NVFP4-Fast on one GB10 via SM121-native vLLM, 80.6 tok/s single-stream to 344 tok/s at concurrency 32, with GSM8K 86.73% and 86.33% MTP acceptance over 474K draft tokens.
 - [secYOUre/nvfp4bench](https://github.com/secYOUre/nvfp4bench) - NVFP4 peak-throughput CLI for GB10 sm_121a, 1022 TFLOPS sparse and 511 dense via packed mxf4nvf4 MMA.
 
 ## Models & Benchmarks
@@ -160,6 +163,7 @@ GB10's Blackwell architecture supports NVFP4 (4-bit floating point) in hardware.
 - [Kleybrink/dgx-spark-bench](https://github.com/Kleybrink/dgx-spark-bench) - Benchmarking framework measuring throughput, latency, VRAM, and accuracy with LLM-as-a-Judge.
 - [lmxxf/deepseek-v4-deployment-on-dgx-spark](https://github.com/lmxxf/deepseek-v4-deployment-on-dgx-spark) - DeepSeek-V4 deployment guide for DGX Spark.
 - [marksunner/dgx-spark-ds4-benchmark](https://github.com/marksunner/dgx-spark-ds4-benchmark) - DeepSeek-V4-Flash distributed across two DGX Sparks with antirez's ds4 engine (pipeline parallel), benchmarked across context lengths.
+- [marksunner/dgx-spark-single-stack](https://github.com/marksunner/dgx-spark-single-stack) - Qwen3.5-122B on a single DGX Spark at 41-47 tok/s via a hybrid INT4+FP8 checkpoint with MTP speculative decoding, benchmarked against a dual-Spark Ray setup that trails at ~28 tok/s.
 - [marksunner/dgx-spark-step37-flash](https://github.com/marksunner/dgx-spark-step37-flash) - Notes on running StepFun's Step 3.7 Flash (198B MoE) on a single DGX Spark with llama.cpp at ~27 tok/s and 128K context.
 - [martimramos/dgx-spark-ml-guide](https://github.com/martimramos/dgx-spark-ml-guide) - Guide to running PyTorch and ML workloads on DGX Spark.
 - [Memoriant/dgx-spark-kv-cache-benchmark](https://github.com/Memoriant/dgx-spark-kv-cache-benchmark) - KV cache quantization on GB10: dequantization cliff (q4_0 −37% gen tps at 110K), unified-memory paradox, prefill immunity.
@@ -188,15 +192,17 @@ You can connect two DGX Spark units directly over 200 Gb/s QSFP for double the m
 - [CosmicRaisins/minimax-m3-awq-gb10](https://github.com/CosmicRaisins/minimax-m3-awq-gb10) - MiniMax-M3-AWQ-INT4 vLLM serve recipe for 4x GB10, FP8 KV cache, EAGLE3 spec-decode, and indexer-corruption fix.
 - [digchick/dgx-spark-200g-link-fix](https://github.com/digchick/dgx-spark-200g-link-fix) - Troubleshooting playbook for the 200G ConnectX-7 link failing to train between two Sparks (CX7 hotplug power-saving), with the fix and NCCL/RoCE verification.
 - [hazyumps/deepseek-v4-flash-gb10](https://github.com/hazyumps/deepseek-v4-flash-gb10) - Recipe and patches to serve DeepSeek-V4-Flash across two GB10 Sparks with vLLM (tensor + expert parallel over RoCE) at 384K context.
-- [HeNryous/mimo-spark-optimized](https://github.com/HeNryous/mimo-spark-optimized) - MiMo-V2.5 NVFP4 on two DGX Spark TP=2, with a custom WMMA tensor-core flash-decode kernel and 4-bit NVFP4 KV-cache that doubles KV capacity.
+- [HeNryous/mimo-v25-dflash-dgx-spark](https://github.com/HeNryous/mimo-v25-dflash-dgx-spark) - MiMo-V2.5 (309B MoE) vLLM recipe on two DGX Spark TP=2 with DFlash speculative decoding at ~54 tok/s single-stream, a 1.67M-token fp8 KV pool at 500K context, and zram/OOM GB10 hardening.
 - [idonati/spark-vllm-docker-festr2](https://github.com/idonati/spark-vllm-docker-festr2) - vLLM patches for festr2 MiMo-V2.5 NVFP4/MXFP8 on an 8-node sm_121 cluster, with a fused-QKV loader fix for Q mis-slotted as K/V on 7 of 8 ranks.
+- [joeynyc/Hy3-295B-NVFP4-2x-DGX-Spark](https://github.com/joeynyc/Hy3-295B-NVFP4-2x-DGX-Spark) - Hunyuan 3 295B MoE (NVFP4) on two DGX Sparks with vLLM and Ray, 26 tok/s single-stream at 262K context with TurboQuant k8v4 KV cache, plus upstream vLLM fixes (#47792, #47777).
 - [josephdrose/nccl-spark-switchless](https://github.com/josephdrose/nccl-spark-switchless) - NCCL v2.30.7 patches for a switchless 4x GB10 RoCE ring with 2-hop store-and-forward relay.
 - [makiisthenes/dgx-spark-multinode-vllm-ray](https://github.com/makiisthenes/dgx-spark-multinode-vllm-ray) - Dual-DGX Spark vLLM deployment with NVIDIA vLLM 26.04, Ray, and 200 GbE QSFP.
 - [pfn/spark-vllm-compose](https://github.com/pfn/spark-vllm-compose) - Multi-node Docker Compose configuration for vLLM on DGX Spark.
 - [rajsinghtechbot/dgx-spark-vllm-k8s](https://github.com/rajsinghtechbot/dgx-spark-vllm-k8s) - Kubernetes cookbook for DeepSeek-V4-Flash on dual DGX Spark, with Multus/Spiderpool RDMA over RoCEv2, UMA-aware container memory limits, and Prometheus monitoring.
 - [RustRunner/DGX-Llama-Cluster](https://github.com/RustRunner/DGX-Llama-Cluster) - Three-node llama.cpp cluster for DGX Spark over ConnectX-7 RDMA, 384 GB pooled unified memory.
 - [tomsti/guides](https://github.com/tomsti/guides) - GB10 cluster guide for DGX Spark over ConnectX-7 RoCE, covering NCCL rail pinning, the duplicate-MAC workaround, and MikroTik 400G switching.
-- [tonyd2wild/deepseek-v4-flash-2x-spark-1m](https://github.com/tonyd2wild/deepseek-v4-flash-2x-spark-1m) - DeepSeek-V4-Flash at 1M-token context on dual DGX Spark, 45.5 tok/s decode and 786 tok/s prefill on 800K prompts.
+- [tonyd2wild/DeepSeek-v4-Flash-DSpark-1M-NVFP4-KV-2x-DGX-Spark](https://github.com/tonyd2wild/DeepSeek-v4-Flash-DSpark-1M-NVFP4-KV-2x-DGX-Spark) - DeepSeek-V4-Flash-DSpark at 1M context on dual DGX Spark with 4-bit nvfp4_ds_mla KV cache (3.2M-token pool), 50-60 tok/s single-stream and 315 tok/s aggregate at concurrency 16.
+- [tonyd2wild/GLM-5.2-655K-MTP-4x-DGX-Spark---25-32tok-s](https://github.com/tonyd2wild/GLM-5.2-655K-MTP-4x-DGX-Spark---25-32tok-s) - GLM-5.2 (744B MoE, QuantTrio INT4/INT8) served at 655K-token context across four DGX Sparks via decode-context-parallelism (DCP4), 23 tok/s single-stream with MTP k=3.
 - [tonyd2wild/MiMo-V2.5-TP3-NVFP4-KV-3xDGX-Spark](https://github.com/tonyd2wild/MiMo-V2.5-TP3-NVFP4-KV-3xDGX-Spark) - MiMo V2.5 Omni (310B MoE, text/image/video/audio) at tensor-parallel 3 across three DGX Sparks, with 4-bit NVFP4 KV cache for a ~10.6M-token KV pool at 1M context.
 - [tonyd2wild/Minimax-M3-NVFP-3x-DGX-Sparks-TP-3](https://github.com/tonyd2wild/Minimax-M3-NVFP-3x-DGX-Sparks-TP-3) - MiniMax-M3 NVFP4 (428B-A23B) served at tensor-parallel 3 across three DGX Sparks, with head-padding and RoCE fixes.
 - [urbanspr1nter/dgx-spark-bare-metal](https://github.com/urbanspr1nter/dgx-spark-bare-metal) - Four-node DGX Spark Ray/vLLM cluster (480 GB) for MoE serving, with an sm_121 CUTLASS FP8 patch.
@@ -230,7 +236,7 @@ You can connect two DGX Spark units directly over 200 Gb/s QSFP for double the m
 - [Logos-Flux/spark-voice-pipeline](https://github.com/Logos-Flux/spark-voice-pipeline) - Real-time voice assistant on DGX Spark achieving ~766 ms latency to first audio.
 - [mARTin-B78/dgx-spark-faster-qwen3-tts](https://github.com/mARTin-B78/dgx-spark-faster-qwen3-tts) - Faster-Qwen3-TTS on DGX Spark (GB10) as an OpenAI-compatible TTS API with CUDA-graph acceleration and four voice backends.
 - [Mekopa/whisperx-blackwell](https://github.com/Mekopa/whisperx-blackwell) - GPU-accelerated WhisperX on Blackwell (sm_121) for DGX Spark.
-- [rappdw/transcribe-dgx](https://github.com/rappdw/transcribe-dgx) - Audio transcription with speaker diarization for DGX Spark using WhisperX.
+- [WillIsback/whisperx-gb10](https://github.com/WillIsback/whisperx-gb10) - WhisperX transcription and pyannote diarization REST API for GB10 (aarch64, sm_121), with an async job queue, SRT/VTT/TXT export, and prebuilt Docker Hub/GHCR images on NGC PyTorch 25.05.
 
 ## Science & HPC
 
@@ -266,6 +272,7 @@ Beyond LLMs, GB10's unified memory and aarch64 stack run scientific compute: pro
 - [parallelArchitect/sparkview](https://github.com/parallelArchitect/sparkview) - Terminal GPU monitor with GB10-aware unified-memory reporting, memory-pressure (PSI) and power-rail readouts, and an anomaly auto-logger.
 - [paul-aviles/NVIDIA-DGX-Spark-Dashboard](https://github.com/paul-aviles/NVIDIA-DGX-Spark-Dashboard) - Browser-based monitoring dashboard for DGX Spark nodes.
 - [r0b0tlab/hermes-concurrent-agents](https://github.com/r0b0tlab/hermes-concurrent-agents) - Harness for concurrent Hermes Agent workers on one GB10, kanban-coordinated with crash recovery, 3x total tok/s.
+- [TheAwaken1/Spark-Studio](https://github.com/TheAwaken1/Spark-Studio) - Launch and tuning control plane for vLLM, SGLang, and llama.cpp on DGX Spark, with a pre-launch unified-memory fit guard, automatic drop_caches reclaim for the GB10 pinned-memory quirk, and llama-benchy sweeps.
 - [thx0701/dgx-spark-status](https://github.com/thx0701/dgx-spark-status) - Real-time system monitoring dashboard built with SvelteKit and SSE.
 - [vybe/sparky](https://github.com/vybe/sparky) - Vue 3 web UI for DGX Spark with ComfyUI generation, Ollama chat, voice, and container control.
 - [wentbackward/nv-monitor](https://github.com/wentbackward/nv-monitor) - Terminal monitor and Prometheus exporter for DGX Spark in one zero-dependency C binary, with HugePages-correct unified memory and Grace big.LITTLE core labels.
