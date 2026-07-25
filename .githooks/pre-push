@@ -1,14 +1,23 @@
 #!/bin/sh
-# Pre-push hook: block the push if the list fails awesome-lint.
+# Pre-push hook: block the push if the list fails awesome-lint or the house-style check.
 #
 # Activate (once per clone):  git config core.hooksPath .githooks
 # awesome-lint checks structure, alphabetical order, format, and repo metadata.
-# Note: it does NOT check for dead links — run a link sweep separately.
+# style-check.sh checks the mechanically decidable house-style rules (naming canon,
+# length ceiling, punctuation, self-repetition); its warnings do not block.
+# Note: neither checks for dead links — run a link sweep separately.
 
 echo "pre-push: running awesome-lint…"
 if ! npx --yes awesome-lint; then
 	echo "✗ awesome-lint failed — push blocked. Fix the issues above, then push again." >&2
 	exit 1
 fi
-echo "✓ awesome-lint passed — pushing."
+echo "✓ awesome-lint passed."
+
+echo "pre-push: running house-style check…"
+if ! bash .github/scripts/style-check.sh README.md; then
+	echo "✗ style-check failed — push blocked. Fix the ERRORs above, then push again." >&2
+	exit 1
+fi
+echo "✓ style-check passed — pushing."
 exit 0

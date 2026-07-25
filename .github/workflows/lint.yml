@@ -15,3 +15,6 @@ jobs:
         with:
           node-version: lts/*
       - run: npx awesome-lint
+
+      - name: House-style check
+        run: bash .github/scripts/style-check.sh README.md
