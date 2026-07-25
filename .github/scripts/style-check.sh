@@ -86,6 +86,19 @@ while IFS= read -r entry; do
     && report WARN "$ln" "S1/evaluative-opener" "opens with an evaluative adjective"
 done <<< "$entries"
 
+# ---- Structure: a stray blank line silently splits a list, and awesome-lint
+# ---- does not catch it. Caught in the wild on 2026-07-25 during an insert.
+struct=$(awk '
+  /^#/    { if (NR > 1 && prev != "") printf "ERROR L%-5s %-28s %s\n", NR, "MD/heading-spacing", "heading must be preceded by a blank line" }
+  /^$/    { if (prev ~ /^- \[/) blankafter = NR; prev = ""; next }
+  /^- \[/ { if (blankafter && blankafter == NR - 1) printf "ERROR L%-5s %-28s %s\n", blankafter, "MD/list-split", "blank line splits an entry list"; blankafter = 0 }
+          { prev = $0 }
+' "$README")
+if [ -n "$struct" ]; then
+  printf '%s\n' "$struct"
+  err=$((err + $(printf '%s\n' "$struct" | grep -c .)))
+fi
+
 echo
 echo "checked $total entry descriptions: $err error(s), $warn warning(s)"
 [ "$err" -eq 0 ] || { echo "style-check failed — fix the ERRORs above."; exit 1; }
