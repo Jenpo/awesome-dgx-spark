@@ -10,7 +10,7 @@ The project must explicitly target the GB10 / sm_121(a) platform in its own READ
 
 ### 2. Honest, evidence-backed descriptions
 
-One line, in your own words, starting with what the thing *is* — not with an adjective. No marketing language: any quality claim ("fast", "optimized", "comprehensive") must be backed on the spot by a number, a named technique, or a concrete capability, otherwise drop it. When you cite a number, cite the one that proves the contribution, not the most impressive-looking one. The bar: the line should survive Hacker News without being called either hype or "so what does it actually do?".
+One line, in your own words, starting with what the thing *is*. Opening with a classifying modifier is fine, because it states a fact — "One-command installer…", "Prebuilt wheel…", "Read-only diagnostic CLI…". Opening with a judgment is not: "Optimized…", "Powerful…", "Complete…". The test is whether dropping the word removes a fact or only removes praise. No marketing language: any quality claim ("fast", "optimized", "comprehensive") must be backed on the spot by a number, a named technique, or a concrete capability, otherwise drop it. When you cite a number, cite the one that proves the contribution, not the most impressive-looking one. The bar: the line should survive Hacker News without being called either hype or "so what does it actually do?".
 
 ### 3. Proof of function
 
@@ -34,6 +34,11 @@ Link to the canonical repository, not a redirect or mirror — if a project was 
 - Do not start with "A", "An", or "The".
 - Keep it to one line, free of marketing language (principle 2).
 - Separate the link and the description with ` - ` (space-hyphen-space), not an em dash.
+- Aim for about 16 words. Longer is fine when every added clause carries a number or a named technique; 30 words is the ceiling. Padding a line with prose is not.
+- Spell the platform the way the rest of the list does: `DGX Spark`, `GB10`, `sm_121`, `NVFP4`, `aarch64`, `NVIDIA`. Use `arm64` only when naming an artifact whose own tag is `arm64` (a Docker platform, for instance).
+- No semicolons or em/en dashes inside the description, and at most one colon, used to introduce a list.
+
+A pre-push hook and CI run `.github/scripts/style-check.sh`, which enforces the mechanical parts of the above. You can run it yourself with `bash .github/scripts/style-check.sh README.md`.
 
 ## Self-submissions
 
