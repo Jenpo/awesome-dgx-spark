@@ -5,7 +5,9 @@
 # awesome-lint checks structure, alphabetical order, format, and repo metadata.
 # style-check.sh checks the mechanically decidable house-style rules (naming canon,
 # length ceiling, punctuation, self-repetition); its warnings do not block.
-# Note: neither checks for dead links — run a link sweep separately.
+# Note: neither asks whether an entry is still reachable or still true. Those are the
+# weekly maintenance workflow's job (link-check.sh and entry-drift.sh), because both
+# need a network round-trip per entry and neither should stand between you and a push.
 
 echo "pre-push: running awesome-lint…"
 if ! npx --yes awesome-lint; then

@@ -40,6 +40,12 @@ Link to the canonical repository, not a redirect or mirror — if a project was 
 
 A pre-push hook and CI run `.github/scripts/style-check.sh`, which enforces the mechanical parts of the above. You can run it yourself with `bash .github/scripts/style-check.sh README.md`.
 
+## Keeping entries true
+
+A description is a claim, and claims expire. A project that was a benchmark when it was added acquires a newer version; a number in our line gets retracted upstream; a one-line entry stops describing what the project has become. None of that shows up as a broken link, so a weekly job runs `.github/scripts/entry-drift.sh`, which dates each line with `git blame` and counts how much its repository has committed since. It produces a reading list, not a failure — a human re-reads the flagged projects and rewrites the lines that no longer hold.
+
+If you maintain a project listed here and it has moved past its description, open a pull request that updates the line. Correcting a stale entry is as welcome as adding a new one, and pointing at the evidence is enough — you do not need to argue for inclusion again.
+
 ## Self-submissions
 
 Self-submissions are welcome and evaluated by the same five principles as any other entry. Please disclose the affiliation in your pull request description.
