@@ -62,6 +62,11 @@ jobs:
         env:
           GH_TOKEN: ${{ github.token }}
         run: |
+          # Keep the report in the log as well as the summary. A summary that renders
+          # empty and a check that produced nothing look identical otherwise, and this
+          # step is deliberately non-failing, so its exit code proves nothing.
+          report=$(bash .github/scripts/entry-drift.sh README.md 2>&1) || true
+          echo "$report"
           {
             echo '## Entry drift'
             echo
@@ -69,6 +74,6 @@ jobs:
             echo 'Re-read these and update the line if it is no longer the best thing to say.'
             echo
             echo '```'
-            bash .github/scripts/entry-drift.sh README.md || true
+            echo "$report"
             echo '```'
           } >> "$GITHUB_STEP_SUMMARY"
