@@ -292,7 +292,7 @@ Beyond LLMs, GB10's unified memory and aarch64 stack run scientific compute: pro
 
 - [graham33/nixos-dgx-spark](https://github.com/graham33/nixos-dgx-spark) - Nix flake with a NixOS module for NVIDIA's DGX Spark kernel, bootable USB image, and 15 playbook devshells for TRT-LLM, NVFP4, and NCCL over QSFP.
 - [maxspevack/spark-rocky](https://github.com/maxspevack/spark-rocky) - Rocky Linux 10.2 Live-USB for DGX Spark on the CIQ 6.18 kernel and open driver 610.57.04, carrying zero patches of its own and validated at 1.010x benchmark parity.
-- [Neural-ICE/ICE-CoreOS](https://github.com/Neural-ICE/ICE-CoreOS) - Immutable bootc OS for DGX Spark on CentOS Stream 10, with the GB10 kernel at 4 KiB pages, a signed Secure Boot chain, and TPM2-unlocked LUKS2.
+- [Neural-ICE/ICE-CoreOS](https://github.com/Neural-ICE/ICE-CoreOS) - Immutable bootc OS for DGX Spark on CentOS Stream 10, GB10 kernel at 4 KiB pages, TPM2-unlocked LUKS2, and atomic over-the-air updates with rollback from a signed registry.
 - [RageLtd/arch-dgx-spark-iso](https://github.com/RageLtd/arch-dgx-spark-iso) - Arch Linux installer ISO builder for DGX Spark, with the linux-dgx-spark kernel and archinstall config.
 - [scitrera/cuda-containers](https://github.com/scitrera/cuda-containers) - Prebuilt DGX Spark containers for vLLM, SGLang, llama.cpp, and PyTorch that build NCCL and PyTorch first as a base layer and version by vLLM release rather than tracking git.
 
