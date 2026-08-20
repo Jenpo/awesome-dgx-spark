@@ -133,7 +133,7 @@ DGX Spark is a desktop machine built on the GB10 Grace Blackwell Superchip (SM 1
 
 GB10's Blackwell architecture supports NVFP4 (4-bit floating point) in hardware. It runs faster than INT4 at similar quality.
 
-- [0xBakeer/Qwen3.8-27B-4-bit-on-a-single-DGX-Spark](https://github.com/0xBakeer/Qwen3.8-27B-4-bit-on-a-single-DGX-Spark) - Qwen3.8-27B 4-bit on one DGX Spark, NVFP4 and int4 AutoRound versus FP8 at 75 tok/s single-stream, where the 4-bit edge drops to 0.2% at concurrency 16.
+- [0xBakeer/Qwen3.8-27B-4-bit-on-a-single-DGX-Spark](https://github.com/0xBakeer/Qwen3.8-27B-4-bit-on-a-single-DGX-Spark) - Qwen3.8-27B 4-bit on one DGX Spark, NVFP4 with a DSpark draft at k=14 reaching 75 tok/s, its edge over FP8 falling from 27% at c1 to 0.2% at c16.
 - [AEON-7/Gemma-4-26B-A4B-it-Uncensored-NVFP4](https://github.com/AEON-7/Gemma-4-26B-A4B-it-Uncensored-NVFP4) - NVFP4 Gemma 4 26B MoE on DGX Spark with DFlash speculative decoding, 49.8 tok/s on prose to 202.4 on extraction, and 1,937 tok/s aggregate at 64 concurrent.
 - [AEON-7/Gemma-4-31B-Uncensored-NVFP4-DFlash](https://github.com/AEON-7/Gemma-4-31B-Uncensored-NVFP4-DFlash) - Prebuilt vLLM image for Gemma 4 31B Deckard Heretic with z-lab DFlash k=15 and CUTLASS NVFP4, decode 11 to 38.82 tok/s at c=1.
 - [AEON-7/Nemotron-3-Nano-Omni-AEON-Ultimate-Uncensored](https://github.com/AEON-7/Nemotron-3-Nano-Omni-AEON-Ultimate-Uncensored) - Source-built vLLM image with sm_121a patches for abliterated multimodal Nemotron-3-Nano-Omni NVFP4, refusals down from 99/100 to 16/100 with thinking off.
