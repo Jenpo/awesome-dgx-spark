@@ -52,7 +52,6 @@ DGX Spark is a desktop machine built on the GB10 Grace Blackwell Superchip (SM 1
 - [Sggin1/DGX-SPARK](https://github.com/Sggin1/DGX-SPARK) - Dated GB10 lab notes, TurboQuant 3-bit KV cache at 240K context, dual-Spark 195 Gb/s RDMA, and sm_121a FP4 SASS evidence.
 - [sjug/dgx-spark-ethernet-patch](https://github.com/sjug/dgx-spark-ethernet-patch) - Binary patch for the DGX Spark OOBE ethernet-detection bug, an 8-byte aarch64 HasInternet edit for FastOS 1.120.38.
 - [Th0rgal/cuda-blackwell-carry-bug](https://github.com/Th0rgal/cuda-blackwell-carry-bug) - Repro for a PTXAS bug that drops the carry flag between separate inline-asm blocks on GB10 sm_121, with a Docker harness and a 128-bit reference path to compare against.
-- [theshiphq/claw-spark](https://github.com/theshiphq/claw-spark) - One-command OpenClaw and Ollama agent for DGX Spark at ~59 tok/s on Qwen3.5-35B-A3B.
 - [timothystewart6/ubuntu-gb10](https://github.com/timothystewart6/ubuntu-gb10) - Ubuntu 24.04 setup for GB10 in place of DGX OS, Ansible roles for NVIDIA driver, CUDA 13.x, DOCA-OFED, dual-node NCCL, and a 33-check read-only verify playbook.
 - [tonyd2wild/DGX-Spark-Hard-Poweroff-Fix](https://github.com/tonyd2wild/DGX-Spark-Hard-Poweroff-Fix) - Diagnosis of GB10 log-less hard power-offs as an embedded-controller cut, fixed by a 2200 MHz clock cap and page-cache drops at 5% decode cost.
 
@@ -61,7 +60,6 @@ DGX Spark is a desktop machine built on the GB10 Grace Blackwell Superchip (SM 1
 ### vLLM
 
 - [0xSero/deepseek-v4-flash-0731-spark-sparkinfer](https://github.com/0xSero/deepseek-v4-flash-0731-spark-sparkinfer) - Single DGX Spark DeepSeek-V4-Flash-0731 on EXL3 weights and SparkInfer sparse MLA, 34 to 49 tok/s at 262K, with the 432-byte NVFP4 KV record disabled for text corruption.
-- [AEON-7/vllm-dflash](https://github.com/AEON-7/vllm-dflash) - Prebuilt GB10 container for DFlash-Qwen3.5-27B-Uncensored-NVFP4, block-diffusion speculative decoding at 64 tok/s on code, 29.5 on prose, 327.9 aggregate at 16 streams.
 - [AEON-7/vllm-ultimate-dgx-spark](https://github.com/AEON-7/vllm-ultimate-dgx-spark) - DGX Spark vLLM 0.26.0 image with Triton NVFP4 KV cache, DFlash, and NVFP4_AWQ checkpoint loading, reaching 1,151 tok/s at 128 concurrent on Gemma-4-26B-A4B.
 - [airawatraj/dgx-spark-nemotron-super-agent](https://github.com/airawatraj/dgx-spark-nemotron-super-agent) - Nemotron-3-Super-120B agentic stack on DGX Spark scoring 93 of 100 on tool-eval-bench, with spark-arena 23.7 tok/s.
 - [Anemll/dspark-vllm-gx10](https://github.com/Anemll/dspark-vllm-gx10) - Two-node GB10 port of DeepSeek-V4-Flash DSpark to vLLM 0.25.1 with nvfp4_ds_mla KV format and a b12x MXFP4 MoE backend, 48.5 tok/s decode at TP=2.
@@ -79,12 +77,10 @@ DGX Spark is a desktop machine built on the GB10 Grace Blackwell Superchip (SM 1
 - [MiaAI-Lab/Nemotron-Labs-3-Puzzle-75B-DGX-Spark](https://github.com/MiaAI-Lab/Nemotron-Labs-3-Puzzle-75B-DGX-Spark) - Nemotron-Labs-3-Puzzle-75B-A9B NVFP4 hybrid Mamba MoE on one DGX Spark, vLLM 0.24 launcher with aarch64 NCCL and FlashInfer cuda_ipc patches, 256K context, MTP k=3.
 - [MiaAI-Lab/Ornith-1.5-35B-A3B-DGX-Spark](https://github.com/MiaAI-Lab/Ornith-1.5-35B-A3B-DGX-Spark) - Ornith-1.5-35B-A3B NVFP4 with in-checkpoint MTP on one DGX Spark, 86.3 to 440 tok/s at 24 streams, plus two b12x patches for CUDA-graph capture.
 - [omnia-projetcs/spark-dgx](https://github.com/omnia-projetcs/spark-dgx) - Interactive vLLM Docker launcher for DGX Spark, 26 preset model configs from single-node NVFP4 to TP=8 Ray clusters, 11 with measured TTFT and concurrency tables.
-- [phuongncn/asus-gx10-qwen35-speed-hack](https://github.com/phuongncn/asus-gx10-qwen35-speed-hack) - One-shell-script Qwen3.5 vLLM setup for ASUS GX10 and DGX Spark, hybrid INT4+FP8 plus MTP at 112 tok/s on 35B, or native FP8 at 70, 185 across four streams.
 - [saifgithub/vllm-gb10-sm121](https://github.com/saifgithub/vllm-gb10-sm121) - vLLM FP8 CUTLASS and NVFP4 dispatch patch for GB10 sm_121, with the sm120-only arch guard removed.
 - [Sapid-Labs/vllm-spark-arena](https://github.com/Sapid-Labs/vllm-spark-arena) - Crowd-optimization arena for vLLM on sm_121, scoring sitecustomize.py patches over a pinned wheel as paired ratios, gated on byte-identical output and a held-out timed speedup.
 - [spark-arena/sparkrun](https://github.com/spark-arena/sparkrun) - One-command launcher for vLLM, SGLang, and llama.cpp on one or more DGX Sparks, where --tp 2 means two hosts over auto-detected RDMA, plus git-based recipe registries.
 - [sudoingX/dgx-spark-ling](https://github.com/sudoingX/dgx-spark-ling) - Official Ling-3.0-flash INT4 on one DGX Spark through the inclusionAI vLLM fork, 38.7 tok/s against 35.2 for the community GGUF, and decode collapse past 45K.
-- [technigmaai/dgx-spark](https://github.com/technigmaai/dgx-spark) - vLLM serving recipes for Qwen3.6 (PrismaQuant and NVFP4) on DGX Spark, with chat-template fixes and benchmark notes.
 - [timothystewart6/vllm-gb10](https://github.com/timothystewart6/vllm-gb10) - Prebuilt GHCR vLLM image for GB10 (sm_121a) with NCCL and FlashInfer built from source, every input pinned by commit SHA or digest in versions.env.
 
 ### llama.cpp
@@ -95,7 +91,6 @@ DGX Spark is a desktop machine built on the GB10 Grace Blackwell Superchip (SM 1
 - [phuongncn/qwen3.6-27b-speedhack-gx10-dgx-spark](https://github.com/phuongncn/qwen3.6-27b-speedhack-gx10-dgx-spark) - DFlash block-diffusion spec-decode llama.cpp fork for Qwen3.6-27B on GB10, 7-11 to 38-40 tok/s coding via a p_min drafting threshold, and 60-66 to 113 on a 35B-A3B MoE.
 - [Sapid-Labs/llamacpp-spark-arena](https://github.com/Sapid-Labs/llamacpp-spark-arena) - Crowd-optimization arena for llama.cpp CUDA kernels on sm_121, with a thermal gate, alternating baseline and candidate runs, and referee-verified held-out speedup.
 - [shamily/gemma4-llama-dgx-spark](https://github.com/shamily/gemma4-llama-dgx-spark) - Dockerized llama.cpp for all four Gemma 4 models on GB10, benchmarked at 69.9 tok/s tg128 for the 26B-A4B MoE against 11.0 for the dense 31B.
-- [ZengboJamesWang/Qwen3.5-35B-A3B-openclaw-dgx-spark](https://github.com/ZengboJamesWang/Qwen3.5-35B-A3B-openclaw-dgx-spark) - Qwen3.5-35B-A3B at ~43 tok/s on GB10 with a dependency-free proxy that adapts llama-server to openclaw via developer and toolResult role rewrites and an opt-in think prefix for reasoning.
 
 ### SGLang
 
@@ -123,7 +118,6 @@ DGX Spark is a desktop machine built on the GB10 Grace Blackwell Superchip (SM 1
 - [mark-ramsey-ri/trt-dgx-spark](https://github.com/mark-ramsey-ri/trt-dgx-spark) - TensorRT-LLM serving on 1-to-N DGX Spark with an arm64 nvcr 1.2.1 container and tensor-parallel auto-scaling to cluster size.
 - [rdaum/eider](https://github.com/rdaum/eider) - Rust and CUDA inference server for sm_121 NVFP4 with no tensor-runtime dependency, up on Qwen3.8-Flash-Next release day at 190 tok/s prefill and 11 to 13 decode.
 - [rdoiron/mimo-mods-for-dgx-spark](https://github.com/rdoiron/mimo-mods-for-dgx-spark) - Ten vLLM runtime patches for MiMo-V2.5 on sm_121a, with a CUTLASS block-FP8 bypass and a backported tool-call corruption fix (PR #42969).
-- [re-cinq/minimax-m2.5-nvidia-dgx](https://github.com/re-cinq/minimax-m2.5-nvidia-dgx) - MiniMax-M2.5 (230B-A10B) GGUF inference server for DGX Spark via llama.cpp Docker Compose, with an OpenCode agent frontend.
 - [sf-stav/veloGB10](https://github.com/sf-stav/veloGB10) - Rust and CUDA inference engine built only for GB10, running Qwen3.6-35B at ~111 tok/s on one machine and ~130 on two over ConnectX-7, with prebuilt binaries.
 - [Th0rgal/dgx-spark-router](https://github.com/Th0rgal/dgx-spark-router) - Stdlib-only OpenAI-compatible router that swaps ten llama.cpp and vLLM backends in and out of 128 GB unified memory, with per-model GB10 NVFP4 flags.
 - [xangel82/DS4-GB10-GX10-DSpark-CUDA](https://github.com/xangel82/DS4-GB10-GX10-DSpark-CUDA) - DS4 fork for DeepSeek-V4-Flash on one GB10, lossless DSpark and HybridLC decode at 24-26 t/s on tool calls against the original 13, 900-953 t/s prefill.
@@ -146,8 +140,6 @@ GB10's Blackwell architecture supports NVFP4 (4-bit floating point) in hardware.
 - [AEON-7/Gemma-4-26B-A4B-it-Uncensored-NVFP4](https://github.com/AEON-7/Gemma-4-26B-A4B-it-Uncensored-NVFP4) - NVFP4 Gemma 4 26B MoE on DGX Spark with DFlash speculative decoding, 49.8 tok/s on prose to 202.4 on extraction, and 1,937 tok/s aggregate at 64 concurrent.
 - [AEON-7/Gemma-4-31B-Uncensored-NVFP4-DFlash](https://github.com/AEON-7/Gemma-4-31B-Uncensored-NVFP4-DFlash) - Prebuilt vLLM image for Gemma 4 31B Deckard Heretic with z-lab DFlash k=15 and CUTLASS NVFP4, decode 11 to 38.82 tok/s at c=1.
 - [AEON-7/Nemotron-3-Nano-Omni-AEON-Ultimate-Uncensored](https://github.com/AEON-7/Nemotron-3-Nano-Omni-AEON-Ultimate-Uncensored) - Source-built vLLM image with sm_121a patches for abliterated multimodal Nemotron-3-Nano-Omni NVFP4, refusals down from 99/100 to 16/100 with thinking off.
-- [AEON-7/Ornith-1.0-35B-AEON-Ultimate-Uncensored](https://github.com/AEON-7/Ornith-1.0-35B-AEON-Ultimate-Uncensored) - Abliterated Ornith-1.0-35B (DeepReinforce agentic-coding MoE) in BF16 and NVFP4, 93 vs 30 tok/s decode on DGX Spark with DFlash, at 0/80 refusals and unchanged 0.833 agentic pass@1.
-- [AEON-7/Qwen3.6-27B-AEON-Ultimate-Uncensored-DFlash](https://github.com/AEON-7/Qwen3.6-27B-AEON-Ultimate-Uncensored-DFlash) - Prebuilt vLLM container for DGX Spark with abliterated Qwen3.6-27B (NVFP4 + DFlash), 34 to 56 tok/s by category against a 10.5 tok/s stock baseline.
 - [AEON-7/Qwen3.6-35B-A3B-heretic-NVFP4-DFlash](https://github.com/AEON-7/Qwen3.6-35B-A3B-heretic-NVFP4-DFlash) - Source-built vLLM image serving NVFP4 Qwen3.6-35B-A3B with DFlash speculative decoding, averaging 97 tok/s single-stream across six prompt categories.
 - [AEON-7/supergemma4-26b-abliterated-multimodal-nvfp4](https://github.com/AEON-7/supergemma4-26b-abliterated-multimodal-nvfp4) - Plain-NVFP4 SuperGemma4-26B abliterated multimodal for DGX Spark, as a prebuilt vLLM container, one loader patch down from three in the AWQ release.
 - [BioInfo/turboquant-dgx](https://github.com/BioInfo/turboquant-dgx) - TurboQuant KV-cache quantization on GB10 with 3.88x compression and 8.4x Triton kernel speedup.
@@ -160,7 +152,6 @@ GB10's Blackwell architecture supports NVFP4 (4-bit floating point) in hardware.
 - [r0b0tlab/gemma4-26b-a4b-nvfp4-gb10-native-cutlass](https://github.com/r0b0tlab/gemma4-26b-a4b-nvfp4-gb10-native-cutlass) - Gemma-4-26B-A4B NVFP4 for GB10 via native VLLM_CUTLASS MoE backend on CUDA-13 nightly, 260 tok/s at concurrency 8.
 - [r0b0tlab/gemma4-31b-it-nvfp4-gb10](https://github.com/r0b0tlab/gemma4-31b-it-nvfp4-gb10) - Gemma-4-31B-IT NVFP4 reproducibility pack for GB10 with native FlashInfer/CUTLASS FP4 GEMM, 54 tok/s at concurrency 8.
 - [r0b0tlab/nemotron3-super-120b-a12b-nvfp4-gb10-native-mtp](https://github.com/r0b0tlab/nemotron3-super-120b-a12b-nvfp4-gb10-native-mtp) - Nemotron-3-Super-120B-A12B NVFP4 for GB10 on SGLang native MTP, 21.64 tok/s and +45.8% over baseline.
-- [r0b0tlab/nvidia-qwen-3.6-27B-sm121-nvfp4](https://github.com/r0b0tlab/nvidia-qwen-3.6-27B-sm121-nvfp4) - Qwen3.6-27B NVFP4 serving pack for GB10 (sm_121) with vLLM native MTP and FP8 KV cache, 228 tok/s at concurrency 16 and 87.49% full-set GSM8K.
 - [r0b0tlab/qwen36-35b-a3b-nvfp4-fast-sm121-vllm](https://github.com/r0b0tlab/qwen36-35b-a3b-nvfp4-fast-sm121-vllm) - Qwen3.6-35B-A3B NVFP4-Fast on one GB10 via sm_121-native vLLM, 80.6 tok/s single-stream to 344 tok/s at concurrency 32, with GSM8K 86.73% and 86.33% MTP acceptance over 474K draft tokens.
 - [r0b0tlab/qwen36-35b-a3b-nvfp4-sm121-vllm](https://github.com/r0b0tlab/qwen36-35b-a3b-nvfp4-sm121-vllm) - NVIDIA Qwen3.6-35B-A3B-NVFP4 on one GB10 under vLLM 0.25.0, W4A16 targets routed to native W4A4, 93 tok/s single stream, GSM8K 86.5%, 262,144-token context qualified.
 - [r0b0tlab/qwen38-27b-nvfp4-sm121-vllm](https://github.com/r0b0tlab/qwen38-27b-nvfp4-sm121-vllm) - Qwen3.8-27B NVFP4 with MTP on one GB10, published sm_121 vLLM image at 27.8 tok/s c1 against 20.4 on untuned nightly fp4_gemm, NIAH 8/8 at 262K.
@@ -172,7 +163,6 @@ GB10's Blackwell architecture supports NVFP4 (4-bit floating point) in hardware.
 
 ## Models & Benchmarks
 
-- [adadrag/qwen3.5-dgx-spark](https://github.com/adadrag/qwen3.5-dgx-spark) - Setup guide for Qwen3.5-35B-A3B on DGX Spark, vLLM cu130-nightly image, 262K context, 423 tok/s aggregate across 100 concurrent RAG sessions with zero errors.
 - [albond/DGX_Spark_Qwen3.5-122B-A10B-AR-INT4](https://github.com/albond/DGX_Spark_Qwen3.5-122B-A10B-AR-INT4) - Qwen3.5-122B-A10B on DGX Spark, tuned from 28.3 to 52 tok/s (+82%) with a hybrid INT4+FP8 checkpoint and an INT8 LM head.
 - [Avarok-Cybersecurity/atlas-recipes](https://github.com/Avarok-Cybersecurity/atlas-recipes) - Recipe registry for the Atlas engine on GB10, reserved as the @atlas namespace in sparkrun defaults, with per-model NVFP4 KV and MoE settings and measured tok/s.
 - [Blackwellboy/laguna-s21-lab](https://github.com/Blackwellboy/laguna-s21-lab) - Laguna S 2.1 NVFP4 testing lab on one DGX Spark, 20-cell tuning sweep with its losing cells, 12-hour soak of 3,096 turns, and 450-turn thinking-gate study.
@@ -200,13 +190,11 @@ GB10's Blackwell architecture supports NVFP4 (4-bit floating point) in hardware.
 - [r0b0tlab/deepseek-v4-flash-nvfp4-gb10-benchmark](https://github.com/r0b0tlab/deepseek-v4-flash-nvfp4-gb10-benchmark) - DeepSeek-V4-Flash FP8 on two DGX Spark nodes (TP=2, MTP, RoCE), 5 to 38.4 tok/s from the pinned sm_121a vLLM build, 144.6 aggregate at c=16.
 - [r0b0tlab/diffusiongemma-26b-nvfp4-sm121-vllm](https://github.com/r0b0tlab/diffusiongemma-26b-nvfp4-sm121-vllm) - DiffusionGemma 26B-A4B NVFP4 under vLLM on GB10 with the FlashInfer CUTLASS FP4 MoE path, 146.3 tok/s at c1 and 242.9 at c16, no Marlin fallback.
 - [r0b0tlab/laguna-s-2.1-nvfp4-sm121-vllm](https://github.com/r0b0tlab/laguna-s-2.1-nvfp4-sm121-vllm) - Laguna S 2.1 NVFP4 on GB10 pinned to an exact checkpoint revision, with DFlash K=7 at 22.2 tok/s and an 8,620-case scorecard behind a checksummed verdict.
-- [r0b0tlab/minimax-m27-nvfp4-gb10-benchmark](https://github.com/r0b0tlab/minimax-m27-nvfp4-gb10-benchmark) - MiniMax-M2.7 NVFP4 benchmark on dual GB10 (sm_121) via vLLM FlashInfer-CUTLASS, 25.06 tok/s tg128 with an arm64 image.
 - [r0b0tlab/nex-n2-mini-nvfp4](https://github.com/r0b0tlab/nex-n2-mini-nvfp4) - NVFP4 vLLM container for Nex-N2-mini (Qwen3.5-MoE-35B) on GB10, 185 tok/s aggregate at concurrency 8.
 - [r0b0tlab/step37-flash-nvfp4-sm121-vllm-docker](https://github.com/r0b0tlab/step37-flash-nvfp4-sm121-vllm-docker) - vLLM container for StepFun's Step 3.7 Flash NVFP4 (198B MoE VLM) on dual GB10 TP=2, with verified native-CUTLASS sm_121 execution at 16.49 tok/s.
 - [styles01/sparkrun-recipes](https://github.com/styles01/sparkrun-recipes) - Recipe registry and runbooks for 13 models measured on one GB10, from MedGemma 27B to Puzzle 75B, where GMU above 0.55 hard-freezes the node.
 - [VincentMarquez/glm52-gb10-colibri](https://github.com/VincentMarquez/glm52-gb10-colibri) - GLM-5.2 744B on a single DGX Spark at 11.1 tok/s decode with full top-8 routing, via CACHE_ROUTE expert residency the author wrote and merged upstream in colibri PR #199.
 - [Weschera/spark-bench](https://github.com/Weschera/spark-bench) - LLM benchmark for DGX Spark across 76 scenarios and 12 domains, with 12 multi-turn agentic workflows and a TrueScore weighting that puts speed at 5%.
-- [yunusshin/DGX_Spark_Qwen3.5-35B-A3B-Optimized](https://github.com/yunusshin/DGX_Spark_Qwen3.5-35B-A3B-Optimized) - Qwen3.5-35B-A3B on one DGX Spark, 64 to 113 tok/s from INT8 lm_head and MTP-2, with hybrid INT4+FP8 measured at only 1.8% more.
 
 ## Multi-node
 
